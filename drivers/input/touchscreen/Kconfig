@@ -1088,4 +1088,11 @@ config TOUCHSCREEN_IT7260_I2C
 	  To compile this driver as a module, choose M here: the
 	  module will be called it7258_ts_i2c.
 
+config TOUCHBOOST_CONTROL
+	bool "Touch boost control"
+	depends on INPUT_TOUCHSCREEN
+	help
+	  Boeffla Kernels functionality to control input boost as touch boost
+	  in the Boeffla Config app
+
 endif
