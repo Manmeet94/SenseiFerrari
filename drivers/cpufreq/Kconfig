@@ -134,6 +134,10 @@ config CPU_FREQ_DEFAULT_GOV_ZZMOOVE
 	  frequency lookup tables and optimized scaling triggers instead of
 	  % frequency steps to get smooth up/downscaling dependant on CPU load.
 
+config CPU_FREQ_DEFAULT_GOV_IMPULSE
+	bool "impulse"
+	select CPU_FREQ_GOV_IMPULSE
+	help
 
 endchoice
 
@@ -255,6 +259,10 @@ config CPU_FREQ_GOV_ZZMOOVE
  	  frequency lookup tables and optimized scaling triggers instead of
  	  % frequency steps to get smooth up/downscaling dependant on CPU load.
  	  If in doubt, say N.
+
+config CPU_FREQ_GOV_IMPULSE
+	tristate "'impulse' cpufreq governor"
+	depends on CPU_FREQ
 
 config CPU_BOOST
 	tristate "Event base short term CPU freq boost"
