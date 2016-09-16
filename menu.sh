@@ -24,7 +24,7 @@ nocol='\033[0m'
 # Device varibles (Modify this)
 device='Xiaomi Mi4i (FERRARI)' # Device Id
 sensei_base_version='Sensei' # Kernel Id
-version='2.2-dev' # Kernel Version
+version='3.0-test' # Kernel Version
 TC=''
 
 # Modify the following variable if you want to build
@@ -57,7 +57,7 @@ one(){
 	do
 	case "$echoice" in
 	1 )
-		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/uber/bin/aarch64-linux-android-"
+		export CROSS_COMPILE="~/Development/SenseiKernel/toolchains/uber/bin/aarch64-linux-android-"
 		TC="UBER"
 		echo "${blue}"
 		echo "Compiling using UBERTC4.9"
