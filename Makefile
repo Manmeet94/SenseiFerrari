@@ -381,6 +381,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-maybe-uninitialized -W
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -Wno-unused-const-variable \
+		   -Wno-unused-function \
 		   #-Wno-error=unused-const-variable \
 		   -fno-delete-null-pointer-checks \
 		   -std=gnu89
