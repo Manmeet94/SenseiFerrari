@@ -52,9 +52,6 @@
 #define SENSOR_SCALING_FACTOR 1
 #define CPU_DEVICE "cpu%d"
 
-unsigned int temp_threshold = 70;
-module_param(temp_threshold, int, 0755);
-
 static struct msm_thermal_data msm_thermal_info;
 static struct delayed_work check_temp_work;
 static bool core_control_enabled;
@@ -1036,9 +1033,9 @@ static void do_cluster_freq_ctrl(long temp)
 	bool mitigate = false;
 	struct cluster_info *cluster_ptr = NULL;
 
-	if (temp >= temp_threshold)
+	if (temp >= msm_thermal_info.limit_temp_degC)
 		mitigate = true;
-	else if (temp < temp_threshold -
+	else if (temp < msm_thermal_info.limit_temp_degC -
 		 msm_thermal_info.temp_hysteresis_degC)
 		mitigate = false;
 	else
