@@ -29,6 +29,12 @@
 
 #include "../../kernel/sched/sched.h"
 
+#ifdef CONFIG_TOUCHBOOST_CONTROL
+#include <linux/export.h>
+unsigned int input_boost_status = 1;
+unsigned int input_boost_freq = 1344000;
+#endif
+
 struct cpu_sync {
 	int cpu;
 	unsigned int input_boost_min;
@@ -107,6 +113,14 @@ static int set_input_boost_freq(const char *buf, const struct kernel_param *kp)
 out:
 	return 0;
 }
+
+#ifdef CONFIG_TOUCHBOOST_CONTROL
+void set_touchboost_frequency(void)
+{
+	per_cpu(sync_info, 0).input_boost_freq = input_boost_freq;
+}
+EXPORT_SYMBOL(set_touchboost_frequency);
+#endif
 
 static int get_input_boost_freq(char *buf, const struct kernel_param *kp)
 {
@@ -252,6 +266,12 @@ static void cpuboost_input_event(struct input_handle *handle,
 
 #ifdef CONFIG_STATE_NOTIFIER
 	if (state_suspended)
+		return;
+#endif
+
+#ifdef CONFIG_TOUCHBOOST_CONTROL
+	// if touch boost (input boost) is switched off, do nothing
+	if (!input_boost_status)
 		return;
 #endif
 
