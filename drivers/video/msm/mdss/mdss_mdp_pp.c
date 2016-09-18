@@ -23,8 +23,6 @@
 #include <linux/msm-bus.h>
 #include <linux/msm-bus-board.h>
 
-#include "mdss_mdp_kcal_ctrl.h"
-
 struct mdp_csc_cfg mdp_csc_convert[MDSS_MDP_MAX_CSC] = {
 	[MDSS_MDP_CSC_YUV2RGB_601L] = {
 		0,
