@@ -57,7 +57,7 @@ one(){
 	do
 	case "$echoice" in
 	1 )
-		export CROSS_COMPILE="~/Development/SenseiKernel/toolchains/uber/bin/aarch64-linux-android-"
+		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/uber/bin/aarch64-linux-android-"
 		TC="UBER"
 		echo "${blue}"
 		echo "Compiling using UBERTC4.9"
@@ -65,7 +65,7 @@ one(){
 		break
 		;;
 	2 )
-		export CROSS_COMPILE="~/Development/SenseiKernel/toolchains/sabermod/bin/aarch64-"
+		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/sabermod/bin/aarch64-"
 		TC="SM"
 		echo "${blue}"
 		echo "Compiling using SM4.9"
@@ -73,7 +73,7 @@ one(){
 		break
 		;;
 	3 )
-		export CROSS_COMPILE="~/Development/SenseiKernel/toolchains/uber6/bin/aarch64-linux-android-"
+		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/uber6/bin/aarch64-linux-android-"
 		TC="UBER6"
 		echo "${blue}"
 		echo "Compiling using UBER6"
