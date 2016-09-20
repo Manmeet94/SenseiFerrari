@@ -376,15 +376,20 @@ LINUXINCLUDE    := \
 
 KBUILD_CPPFLAGS := -D__KERNEL__
 
-KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-maybe-uninitialized -Wno-trigraphs \
-		   -fno-strict-aliasing -fno-common \
-		   -Werror-implicit-function-declaration \
+KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+ 		   -fno-strict-aliasing -fno-common \
+ 		   -Werror-implicit-function-declaration \
+		   -Wno-error=discarded-array-qualifiers \
+		   -Wno-bool-compare \
+		   -Wno-discarded-array-qualifiers \
 		   -Wno-format-security \
+		   -Wno-logical-not-parentheses \
+		   -Wno-memset-transposed-args \
+		   -Wno-misleading-indentation \
+		   -Wno-switch-bool \
 		   -Wno-unused-const-variable \
-		   -Wno-unused-function \
-		   #-Wno-error=unused-const-variable \
-		   -fno-delete-null-pointer-checks \
-		   -std=gnu89
+ 		   -fno-delete-null-pointer-checks \
+ 		   -std=gnu89
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
