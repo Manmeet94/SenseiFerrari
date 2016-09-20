@@ -65,18 +65,18 @@ one(){
 		break
 		;;
 	2 )
-		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/sabermod/bin/aarch64-"
+		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/aosp/bin/aarch64-linux-android-"
 		TC="SM"
 		echo "${blue}"
-		echo "Compiling using SM4.9"
+		echo "Compiling using AOSP4.9"
 		echo "${restore}"
 		break
 		;;
 	3 )
-		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/uber6/bin/aarch64-linux-android-"
+		export CROSS_COMPILE="/home/haikalizz/Development/SenseiKernel/toolchains/uber7/bin/aarch64-linux-android-"
 		TC="UBER6"
 		echo "${blue}"
-		echo "Compiling using UBER6"
+		echo "Compiling using UBER7"
 		echo "${restore}"
 		break
 		;;
