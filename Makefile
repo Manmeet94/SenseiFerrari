@@ -388,6 +388,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-misleading-indentation \
 		   -Wno-switch-bool \
 		   -Wno-unused-const-variable \
+		   -Wno-maybe-uninitialized \
  		   -fno-delete-null-pointer-checks \
  		   -std=gnu89
 
